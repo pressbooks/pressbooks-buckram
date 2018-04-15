@@ -1,8 +1,14 @@
 // Table of Contents
+$toc-align: 'left' !default;
 
 // Override variables above this line, using the !default flag to allow further overrides.
 @import 'variables/toc';
 
 // Add custom SCSS below these imports and includes.
-// @import 'components/toc/center';
-@import 'components/toc/left';
+@if $toc-align == 'center' {
+  @import 'components/toc/center';
+}
+
+@else if $toc-align == 'left' {
+  @import 'components/toc/left';
+}

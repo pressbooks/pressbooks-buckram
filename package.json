@@ -12,14 +12,11 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"pressbooks-build-tools": "^0.11.0"
+		"pressbooks-build-tools": "^1.4.2"
 	},
 	"scripts": {
-		"lint": "npm run -s lint:scripts && npm run -s lint:styles",
-		"lint:scripts":
-			"node_modules/eslint/bin/eslint.js \"assets/scripts/**/*.js\"",
-		"lint:styles":
-			"node_modules/stylelint/bin/stylelint.js \"assets/styles/**/*.scss\" --syntax scss",
+		"lint": "npm run -s lint:styles",
+		"lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js \"assets/styles/**/*.scss\" --syntax scss",
 		"test": "npm run -s lint"
 	},
 	"eslintConfig": {
